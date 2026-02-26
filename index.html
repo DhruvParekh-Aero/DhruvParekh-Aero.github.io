@@ -1,65 +1,154 @@
 <!DOCTYPE html>
-<html>
 
+<html lang="en">
 <head>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dhruv Parekh | Aerospace Portfolio</title>
 
 <style>
 
 body{
-font-family:Arial;
 margin:0;
-background:#0b132b;
+font-family:Segoe UI,Arial;
+background:#060b18;
 color:white;
+scroll-behavior:smooth;
+overflow-x:hidden;
 }
 
+/* STAR BACKGROUND */
+
+#stars{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+opacity:0.7;
+animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+0%{opacity:0.2}
+50%{opacity:1}
+100%{opacity:0.2}
+}
+
+/* NAVBAR */
+
 nav{
-background:#1c2541;
+position:fixed;
+top:0;
+width:100%;
+background:#0e142b;
 padding:15px;
 text-align:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.6);
+z-index:1000;
 }
 
 nav a{
-color:white;
-margin:15px;
+color:#8aa8ff;
+margin:0 18px;
 text-decoration:none;
-font-weight:bold;
+font-weight:600;
 }
 
+nav a:hover{
+color:white;
+}
+
+/* HERO */
+
 header{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:100px 20px;
-background:#1c2541;
 }
 
 header h1{
-font-size:55px;
+font-size:60px;
+margin:0;
 }
 
 header p{
 font-size:20px;
+color:#8aa8ff;
+margin:5px;
 }
 
+.btn{
+margin-top:25px;
+background:#4c7dff;
+padding:12px 22px;
+border-radius:6px;
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+
+/* FLOATING AIRCRAFT */
+
+.aircraft{
+position:absolute;
+top:20%;
+width:200px;
+opacity:0.15;
+animation:fly 30s linear infinite;
+}
+
+@keyframes fly{
+0%{left:-200px}
+100%{left:120%}
+}
+
+/* SECTION */
+
 section{
-padding:70px 10%;
+padding:90px 12%;
+opacity:0;
+transform:translateY(40px);
+transition:all 1s ease;
+}
+
+section.visible{
+opacity:1;
+transform:translateY(0);
 }
 
 h2{
-color:#5bc0be;
-margin-bottom:20px;
+color:#6fa8ff;
+margin-bottom:30px;
 }
+
+/* PROJECT GRID */
 
 .projects{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
 }
 
 .card{
-background:#1c2541;
-padding:20px;
+background:#0e142b;
 border-radius:10px;
+padding:20px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 30px rgba(0,0,0,0.7);
 }
 
 .card img{
@@ -67,206 +156,139 @@ width:100%;
 border-radius:8px;
 }
 
-.skills{
-display:flex;
-flex-wrap:wrap;
-gap:15px;
-}
-
-.skill{
-background:#3a506b;
-padding:10px 15px;
-border-radius:20px;
-}
+/* GALLERY */
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
 }
 
 .gallery img{
 width:100%;
-border-radius:10px;
+border-radius:8px;
 }
 
-.button{
-background:#5bc0be;
-color:black;
-padding:12px 20px;
-border-radius:5px;
-text-decoration:none;
-font-weight:bold;
+/* SKILLS */
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
 }
+
+.skill{
+background:#1c2541;
+padding:8px 15px;
+border-radius:20px;
+font-size:14px;
+transition:0.3s;
+}
+
+.skill:hover{
+background:#4c7dff;
+}
+
+/* FOOTER */
 
 footer{
+background:#0e142b;
 text-align:center;
-padding:40px;
-background:#1c2541;
+padding:30px;
+margin-top:60px;
 }
 
 </style>
 
 </head>
 
-
-
 <body>
 
+<div id="stars"></div>
 
+<img class="aircraft" src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Airplane_silhouette.png">
 
 <nav>
-
 <a href="#about">About</a>
 <a href="#projects">Projects</a>
-<a href="#research">Research</a>
-<a href="#gallery">CFD Gallery</a>
+<a href="#gallery">CFD</a>
 <a href="#skills">Skills</a>
 <a href="#contact">Contact</a>
-
 </nav>
-
-
 
 <header>
 
 <h1>Dhruv Parekh</h1>
-
 <p>Aeronautical Engineering Student</p>
+<p>CFD • UAV Systems • Aircraft Design</p>
 
-<p>CFD | UAV Systems | Aircraft Design</p>
-
-<br>
-
-<a class="button" href="#">Download Resume</a>
+<a class="btn" href="#">Download Resume</a>
 
 </header>
 
-
-
 <section id="about">
 
-<h2>Mission Profile</h2>
+<h2>About</h2>
 
 <p>
 
-Aeronautical Engineering student passionate about aircraft design,
-CFD simulation, and UAV technologies. Experienced in CAD modeling,
-flight systems, structural analysis, and experimental aerodynamics.
-Currently conducting flow visualization and drag analysis research.
+Aeronautical engineering student passionate about aircraft
+design, computational fluid dynamics, and UAV technologies.
+Focused on aerodynamic performance analysis and advanced
+aircraft system development.
 
 </p>
 
 </section>
 
-
-
 <section id="projects">
 
-<h2>Aircraft & UAV Projects</h2>
+<h2>Projects</h2>
 
 <div class="projects">
 
 <div class="card">
-
 <img src="https://images.unsplash.com/photo-1517976547714-720226b864c1">
-
-<h3>Blended Wing Body UAV</h3>
-
-<p>
-Designed a blended wing body aircraft optimized for aerodynamic
-efficiency and lightweight structure. Performed CFD analysis
-to evaluate lift and drag behavior.
-</p>
-
+<h3>Blended Wing UAV</h3>
+<p>Concept aircraft optimized for aerodynamic efficiency.</p>
 </div>
 
-
 <div class="card">
-
 <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321">
-
 <h3>Fixed Wing Aircraft</h3>
-
-<p>
-Designed and built a fixed wing aircraft with aerodynamic
-calculations and structural optimization for efficient flight.
-</p>
-
+<p>Aircraft designed with aerodynamic and structural analysis.</p>
 </div>
 
-
 <div class="card">
-
 <img src="https://images.unsplash.com/photo-1506947411487-a56738267384">
-
 <h3>Multirotor Drone</h3>
-
-<p>
-Integrated GPS-based flight controller system for autonomous
-navigation and flight stability.
-</p>
-
+<p>GPS stabilized UAV platform for autonomous navigation.</p>
 </div>
-
 
 <div class="card">
-
 <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df">
-
-<h3>3D Aircraft Design</h3>
-
-<p>
-Designed stunt-capable aircraft models using SolidWorks
-and optimized structural components.
-</p>
-
+<h3>Aircraft CAD Design</h3>
+<p>Aircraft modelling using professional CAD tools.</p>
 </div>
-
 
 </div>
 
 </section>
-
-
-
-<section id="research">
-
-<h2>Research Experience</h2>
-
-<p>
-
-Research Intern at National Aerospace Laboratories (NAL)
-
-Working on experimental aerodynamics and flow visualization.
-Analyzing vortex shedding and drag characteristics of bluff
-bodies using water tunnel experiments.
-
-</p>
-
-</section>
-
-
 
 <section id="gallery">
 
-<h2>CFD Visualization Gallery</h2>
+<h2>CFD Visualization</h2>
 
 <div class="gallery">
 
 <img src="https://images.unsplash.com/photo-1563920443079-783e5c786b83">
-
-<img src="https://images.unsplash.com/photo-1508614999368-9260051292e5">
-
 <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
-
 <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df">
+<img src="https://images.unsplash.com/photo-1508614999368-9260051292e5">
 
 </div>
 
 </section>
-
-
 
 <section id="skills">
 
@@ -280,56 +302,60 @@ bodies using water tunnel experiments.
 <div class="skill">XFLR5</div>
 <div class="skill">Python</div>
 <div class="skill">MATLAB</div>
-<div class="skill">Structural Analysis</div>
+<div class="skill">Aerodynamics</div>
 <div class="skill">UAV Systems</div>
 
 </div>
 
 </section>
 
-
-
-<section>
-
-<h2>Achievements</h2>
-
-<p>
-
-AIR 18 – SAEINDIA Drone Development Challenge<br>
-AIR 2 – Inspectron IIT Roorkee<br>
-5th International Rank – Technoxian World Championship<br>
-AIR 2 Drone Helix – SVNIT Surat
-
-</p>
-
-</section>
-
-
-
 <section id="contact">
 
 <h2>Contact</h2>
 
 <p>
-
-Dhruv Parekh<br>
 Email: dhruvparekh2004@gmail.com<br>
-
+Location: Gujarat, India
 </p>
 
 </section>
-
-
 
 <footer>
 
 <p>© 2026 Dhruv Parekh. All Rights Reserved.</p>
 
-<p>Unauthorized reproduction of project materials is prohibited.</p>
-
 </footer>
 
+<script>
+
+/* CREATE STARS */
+
+const stars=document.getElementById("stars")
+
+for(let i=0;i<150;i++){
+let star=document.createElement("div")
+star.className="star"
+star.style.top=Math.random()*100+"%"
+star.style.left=Math.random()*100+"%"
+stars.appendChild(star)
+}
+
+/* SCROLL FADE */
+
+const sections=document.querySelectorAll("section")
+
+window.addEventListener("scroll",()=>{
+sections.forEach(sec=>{
+let top=window.scrollY
+let offset=sec.offsetTop-400
+
+if(top>offset){
+sec.classList.add("visible")
+}
+})
+})
+
+</script>
 
 </body>
-
 </html>
