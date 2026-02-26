@@ -2,40 +2,58 @@
 <html>
 
 <head>
+
 <title>Dhruv Parekh | Aerospace Portfolio</title>
 
 <style>
 
 body{
-font-family: Arial;
+font-family:Arial;
 margin:0;
 background:#0b132b;
 color:white;
 }
 
+nav{
+background:#1c2541;
+padding:15px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
 header{
 text-align:center;
-padding:80px 20px;
+padding:100px 20px;
 background:#1c2541;
 }
 
-h1{
-font-size:48px;
+header h1{
+font-size:55px;
+}
+
+header p{
+font-size:20px;
 }
 
 section{
-padding:60px 10%;
+padding:70px 10%;
 }
 
 h2{
 color:#5bc0be;
+margin-bottom:20px;
 }
 
 .projects{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:25px;
-margin-top:30px;
 }
 
 .card{
@@ -53,7 +71,6 @@ border-radius:8px;
 display:flex;
 flex-wrap:wrap;
 gap:15px;
-margin-top:20px;
 }
 
 .skill{
@@ -62,17 +79,53 @@ padding:10px 15px;
 border-radius:20px;
 }
 
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+}
+
+.button{
+background:#5bc0be;
+color:black;
+padding:12px 20px;
+border-radius:5px;
+text-decoration:none;
+font-weight:bold;
+}
+
 footer{
 text-align:center;
-padding:30px;
+padding:40px;
 background:#1c2541;
 }
 
 </style>
+
 </head>
 
 
+
 <body>
+
+
+
+<nav>
+
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#research">Research</a>
+<a href="#gallery">CFD Gallery</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
 
 
 <header>
@@ -81,71 +134,93 @@ background:#1c2541;
 
 <p>Aeronautical Engineering Student</p>
 
-<p>CFD | UAV Design | Aerodynamics</p>
+<p>CFD | UAV Systems | Aircraft Design</p>
+
+<br>
+
+<a class="button" href="#">Download Resume</a>
 
 </header>
 
 
 
-<section>
+<section id="about">
 
 <h2>Mission Profile</h2>
 
 <p>
+
 Aeronautical Engineering student passionate about aircraft design,
-CFD analysis, and UAV technologies. Experienced in CAD modeling,
+CFD simulation, and UAV technologies. Experienced in CAD modeling,
 flight systems, structural analysis, and experimental aerodynamics.
-Currently working on flow visualization and drag analysis research.
+Currently conducting flow visualization and drag analysis research.
+
 </p>
 
 </section>
 
 
 
-<section>
+<section id="projects">
 
-<h2>Projects</h2>
+<h2>Aircraft & UAV Projects</h2>
 
 <div class="projects">
 
 <div class="card">
+
 <img src="https://images.unsplash.com/photo-1517976547714-720226b864c1">
-<h3>Blended Wing Body Aircraft</h3>
+
+<h3>Blended Wing Body UAV</h3>
+
 <p>
-Designed a blended wing UAV optimized for aerodynamic efficiency.
-Performed CFD analysis in ANSYS to study pressure distribution
-and airflow behavior.
+Designed a blended wing body aircraft optimized for aerodynamic
+efficiency and lightweight structure. Performed CFD analysis
+to evaluate lift and drag behavior.
 </p>
+
 </div>
 
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df">
-<h3>Flow Over Circular Cylinder (NAL)</h3>
-<p>
-Experimental aerodynamics research studying vortex shedding
-and drag measurement using water tunnel visualization.
-</p>
-</div>
 
-
-<div class="card">
 <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321">
+
 <h3>Fixed Wing Aircraft</h3>
+
 <p>
-Designed and built a fixed wing aircraft using aerodynamic
-calculations and structural optimization.
+Designed and built a fixed wing aircraft with aerodynamic
+calculations and structural optimization for efficient flight.
 </p>
+
 </div>
 
 
 <div class="card">
+
 <img src="https://images.unsplash.com/photo-1506947411487-a56738267384">
+
 <h3>Multirotor Drone</h3>
+
 <p>
-Integrated GPS flight controller and stabilized UAV platform
-for autonomous navigation and flight control.
+Integrated GPS-based flight controller system for autonomous
+navigation and flight stability.
 </p>
+
+</div>
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df">
+
+<h3>3D Aircraft Design</h3>
+
+<p>
+Designed stunt-capable aircraft models using SolidWorks
+and optimized structural components.
+</p>
+
 </div>
 
 
@@ -155,7 +230,45 @@ for autonomous navigation and flight control.
 
 
 
-<section>
+<section id="research">
+
+<h2>Research Experience</h2>
+
+<p>
+
+Research Intern at National Aerospace Laboratories (NAL)
+
+Working on experimental aerodynamics and flow visualization.
+Analyzing vortex shedding and drag characteristics of bluff
+bodies using water tunnel experiments.
+
+</p>
+
+</section>
+
+
+
+<section id="gallery">
+
+<h2>CFD Visualization Gallery</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1563920443079-783e5c786b83">
+
+<img src="https://images.unsplash.com/photo-1508614999368-9260051292e5">
+
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+
+<img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df">
+
+</div>
+
+</section>
+
+
+
+<section id="skills">
 
 <h2>Technical Skills</h2>
 
@@ -181,25 +294,29 @@ for autonomous navigation and flight control.
 <h2>Achievements</h2>
 
 <p>
+
 AIR 18 – SAEINDIA Drone Development Challenge<br>
 AIR 2 – Inspectron IIT Roorkee<br>
 5th International Rank – Technoxian World Championship<br>
 AIR 2 Drone Helix – SVNIT Surat
+
 </p>
 
 </section>
 
 
 
-<section>
+<section id="contact">
 
 <h2>Contact</h2>
 
 <p>
+
 Dhruv Parekh<br>
 Mehsana, Gujarat<br>
 Email: dhruvparekh2004@gmail.com<br>
 Phone: +91 63547 59686
+
 </p>
 
 </section>
@@ -211,6 +328,7 @@ Phone: +91 63547 59686
 <p>© Dhruv Parekh Aerospace Portfolio</p>
 
 </footer>
+
 
 
 </body>
